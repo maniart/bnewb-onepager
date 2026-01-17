@@ -39,32 +39,34 @@
     <section id="contact" class="intake-form-section">
         <div class="container">
             <h2>Get in Touch</h2>
-            <p class="form-intro">Let us know how we can help bring creativity to your workplace.</p>
+            <p class="form-intro">We are available for 1:1 workshops and custom-designed courses</p>
 
-            <!-- Form will be embedded here -->
+            <!-- Netlify Form -->
             <div class="form-container">
-                <!-- Option 1: Tally Form (Recommended - Free & Unlimited) -->
-                <!-- Uncomment and replace with your Tally form URL -->
-                <!-- <iframe src="https://tally.so/embed/YOUR_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" title="Contact Form"></iframe> -->
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <!-- Hidden fields for Netlify -->
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
 
-                <!-- Option 2: Google Forms (Free & Unlimited) -->
-                <!-- Uncomment and replace with your Google Form URL -->
-                <!-- <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
 
-                <!-- Option 3: Typeform (Free tier: 10 responses/month) -->
-                <!-- Uncomment and replace with your Typeform ID -->
-                <!-- <div data-tf-widget="YOUR_FORM_ID" data-tf-iframe-props="title=Contact Form" data-tf-medium="snippet" style="width:100%;height:600px;"></div><script src="//embed.typeform.com/next/embed.js"></script> -->
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
 
-                <!-- Placeholder form (replace with actual embed) -->
-                <div class="placeholder-form">
-                    <p><strong>To activate the form:</strong></p>
-                    <ol>
-                        <li>Choose a form provider (recommendations below)</li>
-                        <li>Create your form</li>
-                        <li>Uncomment the corresponding embed code in index.html</li>
-                        <li>Replace the placeholder URL/ID with your form's</li>
-                    </ol>
-                </div>
+                    <div class="form-group">
+                        <label for="message">Tell us about how we can empower your inner artist *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
@@ -76,12 +78,9 @@
                 <div class="footer-logo">
                     <img src="https://cdn.prod.website-files.com/659b4578fa97c268679ee9d9/6626e75da923a09a11cae55d_2color-logo.png" alt="B New B Logo">
                 </div>
-                <nav class="footer-nav">
-                    <a href="#contact">Contact</a>
-                </nav>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Building new Bonds, All rights reserved</p>
+                <div class="footer-copyright">
+                    <p>&copy; <span id="current-year"></span> Building new Bonds, All rights reserved</p>
+                </div>
             </div>
         </div>
     </footer>
